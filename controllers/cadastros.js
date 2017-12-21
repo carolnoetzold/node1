@@ -1,5 +1,13 @@
-app.post("/pagamentos",function(req, res) {
-  var pagamento = req.body;
-  console.log(pagamento);
-  res.send('ok');
-});
+module.exports = function(app){
+  app.get('/cadastros', function(req, res){
+    console.log('Recebida requisicao de teste na porta 3000.')
+    res.send('OK.');
+  });
+
+  app.post ('/cadastros/cadastro', function(rep, res){
+    var cadastro = req.body;
+    console.log(cadastro);
+    res.send ('ok');
+
+  });
+}
