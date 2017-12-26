@@ -4,7 +4,7 @@ module.exports = function(app){
     res.send('OK.');
   });
 
-  app.post ('/cadastros/cadastro', function(rep, res){
+  app.post ('/cadastros/cadastro', function(req, res){
     var cadastro = req.body;
     console.log(cadastro);
     res.send ('ok');
