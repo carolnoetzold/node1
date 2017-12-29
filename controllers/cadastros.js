@@ -1,16 +1,28 @@
 const path = require("path");
+const mongo = require('../db.js');
 module.exports = function (app) {
   app.get('/cadastros', function (req, res) {
-    console.log('Recebida requisicao de teste na porta 3000.')
-    res.send('ta ok');
+   mongo.cadastro.find(function (err, list) {
+     if (err) {
+       res.send(err);
+     } else {
+       res.send(list);
+     }
+  })
+
   });
 
-  app.post('/cadastros/cadastro', function (req, res) {
+  app.post('/cadastros', function (req, res) {
     var cadastro = req.body;
-    res.send(body);
-    var Cadastro = db.Mongoose.model('cadastrocollection', db.CadastroSchema, 'cadastrocollection');
-    var pessoa = new Pessoa({
-      CadastroSchema
+
+    var pessoa = new mongo.cadastro(cadastro);
+
+    pessoa.save(function (err) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send('Cadastro realizado com sucesso.');
+      }
     });
   });
 }
