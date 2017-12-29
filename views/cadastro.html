@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+<style>
+ #cadastroform {
+    width:50px
+    height:50px;
+    position:absolute;
+    top:50%;
+    left:20%;
+    margin-top:-100px;
+    }
+
+    #btnsalvar{
+      position: absolute;
+       left: 27%;
+       top: 110%;
+    }
+
+    .lbcadastro{
+        position: absolute;
+       left: 25%;    
+    }
+     </style>
+
+<form id="cadastroform">
+    <label class="lbcadastro">CADASTRO</label> 
+    <br>
+   Nome:<br>
+   <input id="nome" placeholder="Enter Password" required>
+  <br>
+
+  Telefone:<br>
+  <input id="telefone" placeholder="Ex.:(00) 9 0000-0000" required>
+  <br><br>
+
+  Endereço:<br>
+  <input id="endereco" placeholder="Rua, N°, Bairro" required>
+  <br>
+
+  Cidade:<br>
+  <input id="cidade" placeholder="Cidade" required>
+  <br>
+
+  <button id="btnsalvar">Salvar</button>
+</form> 
+<script>
+    $("#btnsalvar").click(function() {
+      var cadastrar_object = {
+        nome: $("#nome").val(),
+        telefone: $("#telefone").val(),
+        endereco: $("#endereco").val(),
+        cidade: $("#cidade").val()
+      }
+
+      var success = function(response) {
+        console.log(response);
+      }
+
+      $.ajax({
+        type: "POST",
+        url: 'http://localhost:3000/login',
+        data: cadastrar_object,
+        success: success,
+      });
+
+    });
+  </script>
+</body>
+
+</html> -->
